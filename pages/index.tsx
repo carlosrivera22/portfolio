@@ -5,11 +5,13 @@ import Typewriter from 'typewriter-effect';
 import BasicCard from '../components/BasicCard';
 import { Box } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid, Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Timeline from '../components/Timeline';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
@@ -19,6 +21,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Button onClick={() => router.push('/snake')}>button</Button>
         <h2>
           Hello my name is,
         </h2>

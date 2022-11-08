@@ -2,67 +2,57 @@ import styles from '../styles/Home.module.css'
 import { Box } from '@mui/system';
 const timelineData = [
     {
-        text: 'Started working on the app-ideas repository',
-        date: 'Feb 25 2019',
+        text: 
+        <>
+            <p style={{fontSize:12}}>Full-stack engineer responsible for developing, testing, and maintaining the ServiceUp mobile app along with multiple web applications.</p>
+            <hr></hr>
+            <p style={{fontSize:12}}>Our efforts have granted the business Series A funding, which have rapidly scaled our product and services to various markets.</p>
+        </>,
+        date: 'April 2021 - Present',
         category: {
-			tag: 'app-ideas',
+			tag: 'ServiceUp',
 			color: '#FFDB14'
 		},
         link: {
-            url: '#!',
-            text: 'Check it out on GitHub'
+            url: 'https://www.serviceup.com/',
+            text: 'See more'
         }
     },
     {
-        text: 'Started the Weekly Coding Challenge program',
-        date: 'March 04 2019',
+        text: 
+        <>
+        <p style={{fontSize:12}}>Responsible for implementing small data entry applications, using Microsoft Power Apps, aimed towards documenting data that was previously done by pen and paper.</p>
+        </>,
+        date: 'September 2020 - March 2021',
         category: {
-			tag: 'blog',
+			tag: 'Freelance',
 			color: '#e17b77'
 		},
-        link: {
-            url: '#!',
-            text: 'Check it out here'
-        }
     },
     {
-        text: 'Got 1.000 followers on Twitter',
-        date: 'March 07 2019',
+        text: 
+        <>
+        <p style={{fontSize:12}}>Trained and evaluated various machine learning and deep learning models.</p>
+        </>,
+        date: 'January 2019 - September 2020',
         category: {
-			tag: 'twitter',
+			tag: 'wovenware',
 			color: '#1DA1F2'
 		},
         link: {
-            url: '#!',
-            text: 'See profile'
+            url: 'https://www.wovenware.com/',
+            text: 'See more'
         }
     },
     {
         text:
-            'I published my first article in the FreeCodeCamp Medium Publication',
-        date: 'March 18 2019',
+            'Developed an algorithm used to detect syntactic ambiguity in the English language.',
+        date: 'April 2017 - December 2018',
         category: {
-			tag: 'medium',
+			tag: 'uprm-research',
 			color: '#018f69'
-		},
-        link: {
-            url:
-                '#!',
-            text: 'Check it out here'
-        }
+		}
     },
-    {
-        text: 'Over 12.000 views in a single day on my Medium posts',
-        date: 'April 05 2019',
-        category: {
-			tag: 'medium',
-			color: '#018f69'
-		},
-        link: {
-            url: '#!',
-            text: 'See profile'
-        }
-    }
 ]
 
 export default function Timeline(){
@@ -73,7 +63,7 @@ export default function Timeline(){
                     {data.category.tag}
                 </span>
                 <time>{data.date}</time>
-                <b><p style={{color:'black'}}>{data.text}</p></b>
+                <b><p style={{color:'black', fontSize:12}}>{data.text}</p></b>
                 {data.link && (
                     <a
                         href={data.link.url}

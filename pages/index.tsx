@@ -38,7 +38,7 @@ export default function Home() {
         </h1>
       <Box mt={5}>
         <BasicCard 
-          content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms mostly involving computer vision and natural language processing."}
+          content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms, mostly involving computer vision and natural language processing."}
         />
       </Box>
       <Box mt={5}>

@@ -5,8 +5,9 @@ import Typewriter from 'typewriter-effect';
 import BasicCard from '../components/BasicCard';
 import { Box } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Typography, Grid, Button } from '@mui/material';
+import { Typography, Grid } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Timeline from '../components/Timeline';
 
 export default function Home() {
   return (
@@ -72,6 +73,7 @@ export default function Home() {
             </Grid>
           </Grid>
         </Box>
+        <Timeline/>
       </main>
 
       <footer className={styles.footer}>

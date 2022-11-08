@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
+import BasicCard from '../components/BasicCard';
+import { Box } from '@mui/system';
 
 export default function Home() {
   return (
@@ -13,6 +15,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <h2>
+          Hello my name is,
+        </h2>
         <h1 className={styles.title}>
           Carlos Rivera-Velázquez
         </h1>
@@ -22,40 +27,16 @@ export default function Home() {
           strings: ['Full Stack Developer', 'Web Developer', 'Mobile App Developer', 'Machine Learning Developer'],
           autoStart: true,
           loop: true,
+          delay: 150,
+          deleteSpeed: 100,
         }}
         />
         </h1>
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <Box mt={5}>
+      <BasicCard 
+        content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms mostly involving computer vision and natural language processing."}
+      />
+      </Box>
       </main>
 
       <footer className={styles.footer}>

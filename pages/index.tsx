@@ -4,6 +4,9 @@ import styles from '../styles/Home.module.css'
 import Typewriter from 'typewriter-effect';
 import BasicCard from '../components/BasicCard';
 import { Box } from '@mui/system';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Typography, Grid, Button } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function Home() {
   return (
@@ -33,10 +36,42 @@ export default function Home() {
         />
         </h1>
       <Box mt={5}>
-      <BasicCard 
-        content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms mostly involving computer vision and natural language processing."}
-      />
+        <BasicCard 
+          content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms mostly involving computer vision and natural language processing."}
+        />
       </Box>
+        <Box mt={10}>
+          <Grid container spacing={10}>
+            <Grid item xs={6}>
+              <a href={'https://www.linkedin.com/in/carlos-rivera-velazquez/'} target="_blank">
+                <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <LinkedInIcon fontSize='large'/>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Typography sx={{ fontSize: 12 }} gutterBottom>
+                      <b>LinkedIn Profile</b>
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </a>
+            </Grid>
+            <Grid item xs={6}>
+              <a href={'https://github.com/carlosrivera22'} target="_blank">
+                <Grid container spacing={2}>
+                  <Grid item xs={4}>
+                    <GitHubIcon fontSize='large'/>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Typography sx={{ fontSize: 12 }} gutterBottom>
+                      <b>Github <br/> Profile</b>
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </a>
+            </Grid>
+          </Grid>
+        </Box>
       </main>
 
       <footer className={styles.footer}>

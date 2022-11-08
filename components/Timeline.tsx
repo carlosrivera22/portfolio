@@ -58,7 +58,7 @@ const timelineData = [
 export default function Timeline(){
     const TimelineItem = ({ data }: { data: any }) => (
         <Box className={styles.timeline_item}>
-            <Box className={styles.timeline_item_content} sx={{width: {xs:400, sm: 500, md: 650, lg: 800} }}>
+            <Box className={styles.timeline_item_content} sx={{width: {xs:375, sm: 500, md: 650, lg: 800} }}>
                 <span className={styles.tag} style={{ background: "#ff6a00" }}>
                     {data.category.tag}
                 </span>

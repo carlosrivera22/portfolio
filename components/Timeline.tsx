@@ -1,9 +1,9 @@
 import styles from '../styles/Home.module.css'
-
+import { Box } from '@mui/system';
 const timelineData = [
     {
         text: 'Started working on the app-ideas repository',
-        date: 'February 25 2019',
+        date: 'Feb 25 2019',
         category: {
 			tag: 'app-ideas',
 			color: '#FFDB14'
@@ -67,13 +67,13 @@ const timelineData = [
 
 export default function Timeline(){
     const TimelineItem = ({ data }: { data: any }) => (
-        <div className={styles.timeline_item}>
-            <div className={styles.timeline_item_content}>
-                <span className={styles.tag} style={{ background: data.category.color }}>
+        <Box className={styles.timeline_item}>
+            <Box className={styles.timeline_item_content} sx={{width: {xs:400, sm: 500, md: 650, lg: 800} }}>
+                <span className={styles.tag} style={{ background: "#ff6a00" }}>
                     {data.category.tag}
                 </span>
                 <time>{data.date}</time>
-                <p>{data.text}</p>
+                <b><p style={{color:'black'}}>{data.text}</p></b>
                 {data.link && (
                     <a
                         href={data.link.url}
@@ -84,8 +84,8 @@ export default function Timeline(){
                     </a>
                 )}
                 <span className={styles.circle} />
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
     return (
         <>

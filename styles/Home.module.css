@@ -142,7 +142,7 @@
 }
 
 .timeline_container::after {
-  background-color: #e17b77;
+  background-color: #f3e700;
   content: '';
   position: absolute;
   left: calc(50% - 2px);
@@ -175,7 +175,7 @@
   align-items: flex-end;
   padding: 15px;
   position: relative;
-  width: 400px;
+  /* width: 400px; */
   max-width: 100%;
   text-align: right;
 }
@@ -246,8 +246,8 @@ text-decoration: none;
 }
 
 .timeline_item_content .circle {
-  background-color: #fff;
-  border: 3px solid #e17b77;
+  background-color: #ff6a00;
+  border: 3px solid #f3e700;
   border-radius: 50%;
   position: absolute;
   top: calc(50% - 10px);

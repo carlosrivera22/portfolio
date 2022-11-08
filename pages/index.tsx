@@ -41,39 +41,44 @@ export default function Home() {
           content={"I'm a software engineer with 3+ years of experience in the software industry. Mainly focused on full-stack web development with NextJS and mobile development with React Native. My experience also includes the development of machine learning algorithms mostly involving computer vision and natural language processing."}
         />
       </Box>
-        <Box mt={10}>
-          <Grid container spacing={10}>
-            <Grid item xs={6}>
-              <a href={'https://www.linkedin.com/in/carlos-rivera-velazquez/'} target="_blank">
-                <Grid container spacing={1}>
-                  <Grid item xs={4}>
-                    <LinkedInIcon fontSize='large'/>
-                  </Grid>
-                  <Grid item xs={8}>
-                    <Typography sx={{ fontSize: 12 }} gutterBottom>
-                      <b>LinkedIn Profile</b>
-                    </Typography>
-                  </Grid>
+      <Box mt={5}>
+      <h1>
+        <i>Experience</i>
+      </h1>
+      </Box>
+      <Timeline/>
+      <Box mt={10}>
+        <Grid container spacing={10}>
+          <Grid item xs={6}>
+            <a href={'https://www.linkedin.com/in/carlos-rivera-velazquez/'} target="_blank">
+              <Grid container spacing={1}>
+                <Grid item xs={4}>
+                  <LinkedInIcon fontSize='large'/>
                 </Grid>
-              </a>
-            </Grid>
-            <Grid item xs={6}>
-              <a href={'https://github.com/carlosrivera22'} target="_blank">
-                <Grid container spacing={2}>
-                  <Grid item xs={4}>
-                    <GitHubIcon fontSize='large'/>
-                  </Grid>
-                  <Grid item xs={8}>
-                    <Typography sx={{ fontSize: 12 }} gutterBottom>
-                      <b>Github <br/> Profile</b>
-                    </Typography>
-                  </Grid>
+                <Grid item xs={8}>
+                  <Typography sx={{ fontSize: 12 }} gutterBottom>
+                    <b>LinkedIn Profile</b>
+                  </Typography>
                 </Grid>
-              </a>
-            </Grid>
+              </Grid>
+            </a>
           </Grid>
-        </Box>
-        <Timeline/>
+          <Grid item xs={6}>
+            <a href={'https://github.com/carlosrivera22'} target="_blank">
+              <Grid container spacing={2}>
+                <Grid item xs={4}>
+                  <GitHubIcon fontSize='large'/>
+                </Grid>
+                <Grid item xs={8}>
+                  <Typography sx={{ fontSize: 12 }} gutterBottom>
+                    <b>Github <br/> Profile</b>
+                  </Typography>
+                </Grid>
+              </Grid>
+            </a>
+          </Grid>
+        </Grid>
+      </Box>
       </main>
 
       <footer className={styles.footer}>

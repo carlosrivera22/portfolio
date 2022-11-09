@@ -13,6 +13,12 @@ export default function Board() {
     let direction = '';
 
     const moveRight = () => {
+        if(snake[0][1] >= 29){
+            clearInterval(interval);
+            setSnake([head, tail])
+            alert("Game over");
+            return;
+        }
         snake.pop()
         snake.unshift([snake[0][0],snake[0][1]+1])
         setSnake([...snake])

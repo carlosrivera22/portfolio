@@ -10,6 +10,7 @@ const tail = [head[0], head[1]-1]
 export default function Board() {
     const [snake, setSnake] = React.useState([head, tail]);
     let interval: string | number | NodeJS.Timer | undefined;
+    let direction = '';
 
     const moveRight = () => {
         snake.pop()
@@ -42,14 +43,21 @@ export default function Board() {
 
     function keyDown(e: { preventDefault: () => void; key: string; }){
         e.preventDefault();
-        clearInterval(interval);
-        if(e.key === 'ArrowDown'){
+        if(e.key === 'ArrowDown' && direction !== 'up'){
+            clearInterval(interval);
+            direction ='down';
             interval = setInterval(moveDown,300);
-        }else if(e.key === 'ArrowUp'){
+        }else if(e.key === 'ArrowUp' && direction !== 'down'){
+            clearInterval(interval);
+            direction = 'up';
             interval = setInterval(moveUp,300);
-        }else if(e.key === 'ArrowRight'){
+        }else if(e.key === 'ArrowRight' && direction !== 'left'){
+            clearInterval(interval);
+            direction = 'right';
             interval = setInterval(moveRight,300);
-        }else if(e.key === 'ArrowLeft'){
+        }else if(e.key === 'ArrowLeft' && direction !== 'right'){
+            clearInterval(interval);
+            direction = 'left';
             interval = setInterval(moveLeft,300)
         }
     }

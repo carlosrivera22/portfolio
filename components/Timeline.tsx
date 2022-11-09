@@ -1,13 +1,14 @@
+import * as React from 'react';
 import styles from '../styles/Home.module.css'
 import { Box } from '@mui/system';
 const timelineData = [
     {
         text: 
-        <>
-            <p style={{fontSize:12}}>Full-stack engineer responsible for developing, testing, and maintaining the ServiceUp mobile app along with multiple web applications.</p>
+        <div>
+            <p style={{ fontSize:12, color:"black" }}>Full-stack engineer responsible for developing, testing, and maintaining the ServiceUp mobile app along with multiple web applications.</p>
             <hr></hr>
-            <p style={{fontSize:12}}>Our efforts have granted the business Series A funding, which have rapidly scaled our product and services to various markets.</p>
-        </>,
+            <p style={{ fontSize:12, color:"black" }}>Our efforts have granted the business Series A funding, which have rapidly scaled our product and services to various markets.</p>
+        </div>,
         date: 'April 2021 - Present',
         category: {
 			tag: 'ServiceUp',
@@ -20,9 +21,9 @@ const timelineData = [
     },
     {
         text: 
-        <>
-        <p style={{fontSize:12}}>Responsible for implementing small data entry applications, using Microsoft Power Apps, aimed towards documenting data that was previously done by pen and paper.</p>
-        </>,
+        <div>
+            <p style={{ fontSize:12, color:"black" }}>Responsible for implementing small data entry applications, using Microsoft Power Apps, aimed towards documenting data that was previously done by pen and paper.</p>
+        </div>,
         date: 'September 2020 - March 2021',
         category: {
 			tag: 'Freelance',
@@ -31,9 +32,9 @@ const timelineData = [
     },
     {
         text: 
-        <>
-        <p style={{fontSize:12}}>Trained and evaluated various machine learning and deep learning models.</p>
-        </>,
+        <div>
+            <p style={{ fontSize:12, color:"black" }}>Trained and evaluated various machine learning and deep learning models.</p>
+        </div>,
         date: 'January 2019 - September 2020',
         category: {
 			tag: 'wovenware',
@@ -46,7 +47,7 @@ const timelineData = [
     },
     {
         text:
-            'Developed an algorithm used to detect syntactic ambiguity in the English language.',
+            <p style={{ fontSize:12, color:"black" }}>Developed an algorithm used to detect syntactic ambiguity in the English language.</p>,
         date: 'April 2017 - December 2018',
         category: {
 			tag: 'uprm-research',
@@ -63,7 +64,7 @@ export default function Timeline(){
                     {data.category.tag}
                 </span>
                 <time>{data.date}</time>
-                <b><p style={{color:'black', fontSize:12}}>{data.text}</p></b>
+                <div><b>{data.text}</b></div>
                 {data.link && (
                     <a
                         href={data.link.url}
@@ -78,7 +79,7 @@ export default function Timeline(){
         </Box>
     );
     return (
-        <>
+        <div>
         {timelineData.length > 0 && (
             <div className={styles.timeline_container}>
                 {timelineData.map((data, idx) => (
@@ -87,7 +88,7 @@ export default function Timeline(){
             </div>
             )
         }
-        </>
+        </div>
     )
 }
 

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -53,7 +54,7 @@ export default function Home() {
       <Box mt={10}>
         <Grid container spacing={10}>
           <Grid item xs={6}>
-            <a href={'https://www.linkedin.com/in/carlos-rivera-velazquez/'} target="_blank">
+            <a href={'https://www.linkedin.com/in/carlos-rivera-velazquez/'} target="_blank" rel="noreferrer">
               <Grid container spacing={1}>
                 <Grid item xs={4}>
                   <LinkedInIcon fontSize='large'/>
@@ -67,7 +68,7 @@ export default function Home() {
             </a>
           </Grid>
           <Grid item xs={6}>
-            <a href={'https://github.com/carlosrivera22'} target="_blank">
+            <a href={'https://github.com/carlosrivera22'} target="_blank" rel="noreferrer">
               <Grid container spacing={2}>
                 <Grid item xs={4}>
                   <GitHubIcon fontSize='large'/>

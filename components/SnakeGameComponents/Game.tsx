@@ -12,13 +12,10 @@ export default function Game(){
     
     return (
         <div>
-        <Box display="flex" justifyContent="center" alignItems="center" mb={2}>
-            <Button variant="contained" onClick={() => setActive(true)}>Start Game</Button>
-        </Box>
         <Box display="flex" justifyContent="center" alignItems="center" mb={5}>
             <Score score={score}/>
         </Box>
-        <Board active={active}/>
+        <Board/>
         </div>
     )
 }

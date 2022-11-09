@@ -9,9 +9,9 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-export default function Cell({row, col, cellType}: {row: number, col: number, cellType: string}){
+export default function Cell({cellType}: {row: number, col: number, cellType: string}){
     const backgroundColor = cellType === 'empty' ? "white" : "blue";
     return (
-        <Item style={{ borderRadius:0, backgroundColor: backgroundColor }}></Item>
+        <Item style={{ borderRadius:0, backgroundColor: backgroundColor, boxShadow:'none' }}></Item>
     )
 }

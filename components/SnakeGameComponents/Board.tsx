@@ -9,63 +9,96 @@ const tail = [head[0], head[1]-1]
 
 export default function Board() {
     const [snake, setSnake] = React.useState([head, tail]);
-    let interval: string | number | NodeJS.Timer | undefined;
-    let direction = '';
+    const [direction, setDirection] = React.useState('');
+    const [keyPressed, setKeyPressed] = React.useState('');
+
+    const moveSnake = (direction: string) => {
+        if(direction === 'ArrowUp'){
+            moveUp();
+        }else if(direction === 'ArrowDown'){
+            moveDown();
+        }else if(direction === 'ArrowRight'){
+            moveRight();
+        }else if(direction === 'ArrowLeft'){
+            moveLeft();
+        }
+    }
+    const endGame = () => {
+        setDirection('');
+        setSnake([head, tail]);
+        alert("Game over");
+        return;
+    }
 
     const moveRight = () => {
-        if(snake[0][1] >= 29){
-            clearInterval(interval);
-            setSnake([head, tail])
-            alert("Game over");
+        snake.pop();
+        snake.unshift([snake[0][0],snake[0][1]+1]);
+        if(snake[0][1] > 29){
+            endGame()
             return;
         }
-        snake.pop()
-        snake.unshift([snake[0][0],snake[0][1]+1])
-        setSnake([...snake])
+        setSnake([...snake]);
     }
 
     const moveLeft = () => {
-        snake.pop()
-        snake.unshift([snake[0][0],snake[0][1]-1])
-        setSnake([...snake])
+        snake.pop();
+        snake.unshift([snake[0][0],snake[0][1]-1]);
+        if(snake[0][1] < 0){
+            endGame();
+            return;
+        }
+        setSnake([...snake]);
     }
 
     const moveDown = () => {
-        snake.pop()
-        snake.unshift([snake[0][0]+1,snake[0][1]])
-        setSnake([...snake])
+        snake.pop();
+        snake.unshift([snake[0][0]+1,snake[0][1]]);
+        if(snake[0][0] > 29){
+            endGame();
+            return;
+        }
+        setSnake([...snake]);
     }
 
     const moveUp = () => {
         snake.pop()
         snake.unshift([snake[0][0]-1,snake[0][1]])
-        setSnake([...snake])
+        if(snake[0][0] < 0){
+            endGame();
+            return;
+        }
+        setSnake([...snake]);
     }
 
+
     React.useEffect(() => {
-        window.addEventListener('keydown', keyDown);
-    },[]);
+        if(direction && direction === keyPressed){
+            const interval = setInterval(() => moveSnake(direction));
+            return () => clearInterval(interval);
+        }else{
+            window.addEventListener('keydown', keyDown);
+        }
+    }, [direction, keyPressed]);
+
+    React.useEffect(() => {
+        if(!direction && keyPressed){
+            setDirection(keyPressed);
+        }else{
+            if(
+                (direction === 'ArrowRight' && keyPressed !== 'ArrowLeft') ||
+                (direction === 'ArrowLeft' && keyPressed !== 'ArrowRight') || 
+                (direction === 'ArrowDown' && keyPressed !== 'ArrowUp') ||
+                (direction === 'ArrowUp' && keyPressed !== 'ArrowDown')
+            ){
+                setDirection(keyPressed);
+            }
+        }
+    }, [keyPressed]);
 
 
     function keyDown(e: { preventDefault: () => void; key: string; }){
         e.preventDefault();
-        if(e.key === 'ArrowDown' && direction !== 'up'){
-            clearInterval(interval);
-            direction ='down';
-            interval = setInterval(moveDown,300);
-        }else if(e.key === 'ArrowUp' && direction !== 'down'){
-            clearInterval(interval);
-            direction = 'up';
-            interval = setInterval(moveUp,300);
-        }else if(e.key === 'ArrowRight' && direction !== 'left'){
-            clearInterval(interval);
-            direction = 'right';
-            interval = setInterval(moveRight,300);
-        }else if(e.key === 'ArrowLeft' && direction !== 'right'){
-            clearInterval(interval);
-            direction = 'left';
-            interval = setInterval(moveLeft,300)
-        }
+        setKeyPressed(e.key);
     }
 
     return (
